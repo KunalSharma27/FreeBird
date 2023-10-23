@@ -34,8 +34,8 @@ function Footer() {
             <h2>Support</h2>
             <span>Help & Support</span>
             <span>Trust & Safety</span>
-            <span>Selling on Fiverr</span>
-            <span>Buying on Fiverr</span>
+            <span>Selling on FreeBird</span>
+            <span>Buying on FreeBird</span>
           </div>
           <div className="item">
             <h2>Community</h2>
@@ -51,11 +51,11 @@ function Footer() {
             <span>Become a Seller</span>
             <span>Community Standards</span>
           </div>
-          <div className="item">
-            <h2>More From Fiverr</h2>
-            <span>Fiverr Business</span>
-            <span>Fiverr Pro</span>
-            <span>Fiverr Logo Maker</span>
+          {/* <div className="item">
+            <h2>More </h2>
+            <span>Business</span>
+            <span>Pro</span>
+            <span>Logo Maker</span>
             <span>Fiverr Guides</span>
             <span>Get Inspired</span>
             <span>Fiverr Select</span>
@@ -63,13 +63,13 @@ function Footer() {
             <span>Fiverr Workspace</span>
             <span>Learn</span>
             <span>Working Not Working</span>
-          </div>
+          </div> */}
         </div>
         <hr />
         <div className="bottom">
           <div className="left">
-            <h2>fiverr</h2>
-            <span>© Fiverr International Ltd. 2023</span>
+            <h2>FreeBird</h2>
+            {/* <span>© Fiverr International Ltd. 2023</span> */}
           </div>
           <div className="right">
             <div className="social">
