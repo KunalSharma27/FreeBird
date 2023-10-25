@@ -4,7 +4,7 @@ import GigCard from "../../components/gigCard/GigCard";
 import { useQuery } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 import { useLocation } from "react-router-dom";
-// import {gigs} from "../../data";
+import {gigs} from "../../data";
 
 function Gigs() {
   const [sort, setSort] = useState("sales");
@@ -44,7 +44,7 @@ function Gigs() {
   return (
     <div className="gigs">
       <div className="container">
-        <span className="breadcrumbs">Liverr > Graphics & Design ></span>
+        <span className="breadcrumbs">Liverr Graphics & Design </span>
         <h1>AI Artists</h1>
         <p>
           Explore the boundaries of art and technology with Liverr's AI artists
@@ -75,14 +75,14 @@ function Gigs() {
           </div>
         </div>
         <div className="cards">
-           {isLoading
+            {isLoading
             ? "loading"
             : error
             ? "Something went wrong!"
-            : data.map((gig) => <GigCard key={gig._id} item={gig} />)}  
-            {/* {gigs.map(gig=>(
+            : data.map((gig) => <GigCard key={gig._id} item={gig} />)}   
+             {/* {gigs.map(gig=>(
               <GigCard key={gig.id} item= {gig}/>
-            ))} */}
+            ))}  */}
            
         </div>
       </div>
