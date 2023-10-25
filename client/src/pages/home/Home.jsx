@@ -55,7 +55,14 @@ function Home() {
             </p>
           </div>
           <div className="item">
-            <video src="./img/video.mp4" controls />
+          <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/1uD1BlkTQYc"
+              frameborder="0"
+              allowFullScreen
+              title="YouTube Video"
+            ></iframe>
           </div>
         </div>
       </div>
