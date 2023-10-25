@@ -43,7 +43,13 @@ function Gigs() {
   return (
     <div className="gigs">
       <div className="container">
-        <span className="breadcrumbs">Liverr > Graphics & Design ></span>
+      <ul className="breadcrumbs">
+  <li><a href="/">Liverr</a></li>
+  <li>&gt;</li>
+  <li><a href="/graphics-design">Graphics & Design</a></li>
+  <li>&gt;</li>
+  <li>Current Page</li>
+</ul>
         <h1>AI Artists</h1>
         <p>
           Explore the boundaries of art and technology with Liverr's AI artists

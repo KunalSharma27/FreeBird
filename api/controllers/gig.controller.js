@@ -9,6 +9,9 @@ export const createGig = async (req, res, next) => {
     userId: req.userId,
     ...req.body,
   });
+  // Log the data before saving to the database
+  console.log("New Gig Data (before saving to MongoDB):", newGig);
+
 
   try {
     const savedGig = await newGig.save();
