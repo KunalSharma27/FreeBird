@@ -5,6 +5,9 @@ import {
   useStripe,
   useElements,
 } from "@stripe/react-stripe-js";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
 
 const CheckoutForm = () => {
   const stripe = useStripe();
@@ -13,15 +16,16 @@ const CheckoutForm = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-
+  const navigate = useNavigate();
   useEffect(() => {
     if (!stripe) {
       return;
     }
 
     const clientSecret = new URLSearchParams(window.location.search).get(
-      "payment_intent_client_secret"
-    );
+      "sk_test_51O5XYkSD0ectsry8OpSGIuINEEz6LvFXuba8ybvFjD6pxJsaysFZN8ifhm2dpyILfYLIn5rbhBg1hZsWicop8Ct000QyNPTpdn"
+      );
+      // "payment_intent_client_secret" 
 
     if (!clientSecret) {
       return;
@@ -72,7 +76,9 @@ const CheckoutForm = () => {
     if (error.type === "card_error" || error.type === "validation_error") {
       setMessage(error.message);
     } else {
-      setMessage("An unexpected error occurred.");
+      setMessage("Payment Successfull");
+      const data = await axios.get("http://localhost:5173/success");
+      navigate("/");
     }
 
     setIsLoading(false);
