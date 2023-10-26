@@ -8,17 +8,18 @@ import Reviews from "../../components/reviews/Reviews";
 
 function Gig() {
   const { id } = useParams();
-
+console.log("check");
   const { isLoading, error, data } = useQuery({
     queryKey: ["gig"],
     queryFn: () =>
       newRequest.get(`/gigs/single/${id}`).then((res) => {
         return res.data;
+        console.log("check");
       }),
   });
 
   const userId = data?.userId;
-
+  console.log("check");
   const {
     isLoading: isLoadingUser,
     error: errorUser,
@@ -31,7 +32,7 @@ function Gig() {
       }),
     enabled: !!userId,
   });
-
+  console.log("check");
   return (
     <div className="gig">
       {isLoading ? (
@@ -69,10 +70,12 @@ function Gig() {
                 )}
               </div>
             )}
+            console.log("check");
             <Slider slidesToShow={1} arrowsScroll={1} className="slider">
               {data.images.map((img) => (
                 <img key={img} src={img} alt="" />
               ))}
+              console.log("check");
             </Slider>
             <h2>About This Gig</h2>
             <p>{data.desc}</p>
@@ -165,7 +168,7 @@ function Gig() {
     </div>
   );
 }
-
+console.log("check");
 export default Gig;
 // import React from "react";
 // import "./Gig.scss";

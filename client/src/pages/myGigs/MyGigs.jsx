@@ -17,7 +17,6 @@ function MyGigs() {
         return res.data;
       }),
   });
-
   const mutation = useMutation({
     mutationFn: (id) => {
       return newRequest.delete(`/gigs/${id}`);
@@ -34,9 +33,9 @@ function MyGigs() {
   return (
     <div className="myGigs">
       {isLoading ? (
-        "loading"
+        "Loading"
       ) : error ? (
-        "error"
+        "Error"
       ) : (
         <div className="container">
           <div className="title">
@@ -48,31 +47,35 @@ function MyGigs() {
             )}
           </div>
           <table>
-            <tr>
-              <th>Image</th>
-              <th>Title</th>
-              <th>Price</th>
-              <th>Sales</th>
-              <th>Action</th>
-            </tr>
-            {data.map((gig) => (
-              <tr key={gig._id}>
-                <td>
-                  <img className="image" src={gig.cover} alt="" />
-                </td>
-                <td>{gig.title}</td>
-                <td>{gig.price}</td>
-                <td>{gig.sales}</td>
-                <td>
-                  <img
-                    className="delete"
-                    src="./img/delete.png"
-                    alt=""
-                    onClick={() => handleDelete(gig._id)}
-                  />
-                </td>
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Sales</th>
+                <th>Action</th>
               </tr>
-            ))}
+            </thead>
+            <tbody>
+              {data.map((gig) => (
+                <tr key={gig._id}>
+                  <td>
+                    <img className="image" src={gig.cover} alt="" />
+                  </td>
+                  <td>{gig.title}</td>
+                  <td>{gig.price}</td>
+                  <td>{gig.sales}</td>
+                  <td>
+                    <button
+                      className="delete"
+                      onClick={() => handleDelete(gig._id)}
+                    >
+                      X
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
           </table>
         </div>
       )}
@@ -81,3 +84,5 @@ function MyGigs() {
 }
 
 export default MyGigs;
+
+
