@@ -13,7 +13,9 @@ function Gig() {
     queryKey: ["gig"],
     queryFn: () =>
       newRequest.get(`/gigs/single/${id}`).then((res) => {
+        console.log(res.data);
         return res.data;
+
       }),
   });
 
@@ -69,11 +71,11 @@ function Gig() {
                 )}
               </div>
             )}
-            <Slider slidesToShow={1} arrowsScroll={1} className="slider">
-              {data.images.map((img) => (
+            {/* <Slider slidesToShow={1} arrowsScroll={1} className="slider"> */}
+              {data?.images.map((img) => (
                 <img key={img} src={img} alt="" />
               ))}
-            </Slider>
+            {/* </Slider>  */}
             <h2>About This Gig</h2>
             <p>{data.desc}</p>
             {isLoadingUser ? (
